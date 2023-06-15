@@ -76,19 +76,20 @@ export default function Home() {
     <>
       <CustomCarousel />
       <Separator />
-      <div className="container mx-auto">
-        <div className="max-w-8xl grid grid-cols-3">
+      <div className="container mx-auto p-3">
+        <div className="grid max-w-7xl grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 ">
           {data.map((d) => {
             return (
-              <ProductCard
-                key={d.id}
-                name={d.name}
-                description={d.description}
-                priceInCash={d.priceInCash}
-                paymentInInstallments={d.paymentInInstallments}
-                numberOfInstallments={d.numberOfInstallments.length}
-                productUrl={d.productUrl}
-              />
+              <div className="flex items-center justify-center" key={d.id}>
+                <ProductCard
+                  name={d.name}
+                  description={d.description}
+                  priceInCash={d.priceInCash}
+                  paymentInInstallments={d.paymentInInstallments}
+                  numberOfInstallments={d.numberOfInstallments.length}
+                  productUrl={d.productUrl}
+                />
+              </div>
             )
           })}
         </div>

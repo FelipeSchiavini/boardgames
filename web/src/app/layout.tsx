@@ -6,6 +6,7 @@ import {
 } from 'next/font/google'
 import { Header } from '@/components/org.header'
 import Footer from '@/components/footer.component'
+import { NextAuthProvider } from '@/components/auth-provider.component'
 
 const roboto = Roboto({ subsets: ['latin'], variable: '--font-roboto' })
 
@@ -26,9 +27,11 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         className={`${roboto.variable} ${baiJamjuree.variable} bg-gray-900 font-sans text-gray-100`}
       >
         <main className="min-h-screen ">
-          <Header />
-          {children}
-          <Footer />
+          <NextAuthProvider>
+            <Header />
+            {children}
+            <Footer />
+          </NextAuthProvider>
         </main>
       </body>
     </html>

@@ -24,7 +24,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
   productUrl,
 }) => {
   return (
-    <div className="flex h-[550px] w-80 cursor-pointer flex-col justify-between rounded-lg bg-gray-600 p-4 mt-5 hover:bg-gray-700">
+    <div className="mt-5 flex h-[550px] w-80 cursor-pointer flex-col justify-between rounded-lg bg-gray-600 p-4 hover:bg-gray-700">
       <div>
         <img src={productUrl} className="rounded-md" alt="game" />
         <Separator type="x-small" />

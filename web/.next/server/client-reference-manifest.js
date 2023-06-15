@@ -742,32 +742,6 @@ self.__RSC_MANIFEST={
         "async": false
       }
     },
-    "(app-client)/./src/components/footer.component.tsx": {
-      "*": {
-        "id": "(sc_client)/./src/components/footer.component.tsx",
-        "name": "*",
-        "chunks": [
-          "app/layout:static/chunks/app/layout.js"
-        ],
-        "async": false
-      },
-      "": {
-        "id": "(sc_client)/./src/components/footer.component.tsx",
-        "name": "",
-        "chunks": [
-          "app/layout:static/chunks/app/layout.js"
-        ],
-        "async": false
-      },
-      "default": {
-        "id": "(sc_client)/./src/components/footer.component.tsx",
-        "name": "default",
-        "chunks": [
-          "app/layout:static/chunks/app/layout.js"
-        ],
-        "async": false
-      }
-    },
     "(app-client)/./src/components/org-carrosel.tsx": {
       "*": {
         "id": "(sc_client)/./src/components/org-carrosel.tsx",
@@ -816,6 +790,84 @@ self.__RSC_MANIFEST={
         "name": "ProductCard",
         "chunks": [
           "app/page:static/chunks/app/page.js"
+        ],
+        "async": false
+      }
+    },
+    "(app-client)/./src/components/auth-provider.component.tsx": {
+      "*": {
+        "id": "(sc_client)/./src/components/auth-provider.component.tsx",
+        "name": "*",
+        "chunks": [
+          "app/layout:static/chunks/app/layout.js"
+        ],
+        "async": false
+      },
+      "": {
+        "id": "(sc_client)/./src/components/auth-provider.component.tsx",
+        "name": "",
+        "chunks": [
+          "app/layout:static/chunks/app/layout.js"
+        ],
+        "async": false
+      },
+      "NextAuthProvider": {
+        "id": "(sc_client)/./src/components/auth-provider.component.tsx",
+        "name": "NextAuthProvider",
+        "chunks": [
+          "app/layout:static/chunks/app/layout.js"
+        ],
+        "async": false
+      }
+    },
+    "(app-client)/./src/components/footer.component.tsx": {
+      "*": {
+        "id": "(sc_client)/./src/components/footer.component.tsx",
+        "name": "*",
+        "chunks": [
+          "app/layout:static/chunks/app/layout.js"
+        ],
+        "async": false
+      },
+      "": {
+        "id": "(sc_client)/./src/components/footer.component.tsx",
+        "name": "",
+        "chunks": [
+          "app/layout:static/chunks/app/layout.js"
+        ],
+        "async": false
+      },
+      "default": {
+        "id": "(sc_client)/./src/components/footer.component.tsx",
+        "name": "default",
+        "chunks": [
+          "app/layout:static/chunks/app/layout.js"
+        ],
+        "async": false
+      }
+    },
+    "(app-client)/./src/components/org.header.tsx": {
+      "*": {
+        "id": "(sc_client)/./src/components/org.header.tsx",
+        "name": "*",
+        "chunks": [
+          "app/layout:static/chunks/app/layout.js"
+        ],
+        "async": false
+      },
+      "": {
+        "id": "(sc_client)/./src/components/org.header.tsx",
+        "name": "",
+        "chunks": [
+          "app/layout:static/chunks/app/layout.js"
+        ],
+        "async": false
+      },
+      "Header": {
+        "id": "(sc_client)/./src/components/org.header.tsx",
+        "name": "Header",
+        "chunks": [
+          "app/layout:static/chunks/app/layout.js"
         ],
         "async": false
       }
@@ -2524,51 +2576,6 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/home/felipe/Documentos/boardgames-shop/web/src/app/globals.css#": {
-      "id": "null",
-      "name": "default",
-      "chunks": [
-        "static/css/app/layout.css"
-      ]
-    },
-    "/home/felipe/Documentos/boardgames-shop/web/node_modules/next/font/google/target.css?{\"path\":\"src/app/layout.tsx\",\"import\":\"Bai_Jamjuree\",\"arguments\":[{\"subsets\":[\"latin\"],\"weight\":\"700\",\"variable\":\"--font-bai-jamjuree\"}],\"variableName\":\"baiJamjuree\"}#": {
-      "id": "null",
-      "name": "default",
-      "chunks": [
-        "static/css/app/layout.css"
-      ]
-    },
-    "/home/felipe/Documentos/boardgames-shop/web/node_modules/next/font/google/target.css?{\"path\":\"src/app/layout.tsx\",\"import\":\"Roboto_Flex\",\"arguments\":[{\"subsets\":[\"latin\"],\"variable\":\"--font-roboto\"}],\"variableName\":\"roboto\"}#": {
-      "id": "null",
-      "name": "default",
-      "chunks": [
-        "static/css/app/layout.css"
-      ]
-    },
-    "/home/felipe/Documentos/boardgames-shop/web/src/components/footer.component.tsx": {
-      "id": "(app-client)/./src/components/footer.component.tsx",
-      "name": "*",
-      "chunks": [
-        "app/layout:static/chunks/app/layout.js"
-      ],
-      "async": false
-    },
-    "/home/felipe/Documentos/boardgames-shop/web/src/components/footer.component.tsx#": {
-      "id": "(app-client)/./src/components/footer.component.tsx",
-      "name": "",
-      "chunks": [
-        "app/layout:static/chunks/app/layout.js"
-      ],
-      "async": false
-    },
-    "/home/felipe/Documentos/boardgames-shop/web/src/components/footer.component.tsx#default": {
-      "id": "(app-client)/./src/components/footer.component.tsx",
-      "name": "default",
-      "chunks": [
-        "app/layout:static/chunks/app/layout.js"
-      ],
-      "async": false
-    },
     "/home/felipe/Documentos/boardgames-shop/web/src/components/org-carrosel.tsx": {
       "id": "(app-client)/./src/components/org-carrosel.tsx",
       "name": "*",
@@ -2614,6 +2621,99 @@ self.__RSC_MANIFEST={
       "name": "ProductCard",
       "chunks": [
         "app/page:static/chunks/app/page.js"
+      ],
+      "async": false
+    },
+    "/home/felipe/Documentos/boardgames-shop/web/src/app/globals.css#": {
+      "id": "null",
+      "name": "default",
+      "chunks": [
+        "static/css/app/layout.css"
+      ]
+    },
+    "/home/felipe/Documentos/boardgames-shop/web/node_modules/next/font/google/target.css?{\"path\":\"src/app/layout.tsx\",\"import\":\"Bai_Jamjuree\",\"arguments\":[{\"subsets\":[\"latin\"],\"weight\":\"700\",\"variable\":\"--font-bai-jamjuree\"}],\"variableName\":\"baiJamjuree\"}#": {
+      "id": "null",
+      "name": "default",
+      "chunks": [
+        "static/css/app/layout.css"
+      ]
+    },
+    "/home/felipe/Documentos/boardgames-shop/web/node_modules/next/font/google/target.css?{\"path\":\"src/app/layout.tsx\",\"import\":\"Roboto_Flex\",\"arguments\":[{\"subsets\":[\"latin\"],\"variable\":\"--font-roboto\"}],\"variableName\":\"roboto\"}#": {
+      "id": "null",
+      "name": "default",
+      "chunks": [
+        "static/css/app/layout.css"
+      ]
+    },
+    "/home/felipe/Documentos/boardgames-shop/web/src/components/auth-provider.component.tsx": {
+      "id": "(app-client)/./src/components/auth-provider.component.tsx",
+      "name": "*",
+      "chunks": [
+        "app/layout:static/chunks/app/layout.js"
+      ],
+      "async": false
+    },
+    "/home/felipe/Documentos/boardgames-shop/web/src/components/auth-provider.component.tsx#": {
+      "id": "(app-client)/./src/components/auth-provider.component.tsx",
+      "name": "",
+      "chunks": [
+        "app/layout:static/chunks/app/layout.js"
+      ],
+      "async": false
+    },
+    "/home/felipe/Documentos/boardgames-shop/web/src/components/auth-provider.component.tsx#NextAuthProvider": {
+      "id": "(app-client)/./src/components/auth-provider.component.tsx",
+      "name": "NextAuthProvider",
+      "chunks": [
+        "app/layout:static/chunks/app/layout.js"
+      ],
+      "async": false
+    },
+    "/home/felipe/Documentos/boardgames-shop/web/src/components/footer.component.tsx": {
+      "id": "(app-client)/./src/components/footer.component.tsx",
+      "name": "*",
+      "chunks": [
+        "app/layout:static/chunks/app/layout.js"
+      ],
+      "async": false
+    },
+    "/home/felipe/Documentos/boardgames-shop/web/src/components/footer.component.tsx#": {
+      "id": "(app-client)/./src/components/footer.component.tsx",
+      "name": "",
+      "chunks": [
+        "app/layout:static/chunks/app/layout.js"
+      ],
+      "async": false
+    },
+    "/home/felipe/Documentos/boardgames-shop/web/src/components/footer.component.tsx#default": {
+      "id": "(app-client)/./src/components/footer.component.tsx",
+      "name": "default",
+      "chunks": [
+        "app/layout:static/chunks/app/layout.js"
+      ],
+      "async": false
+    },
+    "/home/felipe/Documentos/boardgames-shop/web/src/components/org.header.tsx": {
+      "id": "(app-client)/./src/components/org.header.tsx",
+      "name": "*",
+      "chunks": [
+        "app/layout:static/chunks/app/layout.js"
+      ],
+      "async": false
+    },
+    "/home/felipe/Documentos/boardgames-shop/web/src/components/org.header.tsx#": {
+      "id": "(app-client)/./src/components/org.header.tsx",
+      "name": "",
+      "chunks": [
+        "app/layout:static/chunks/app/layout.js"
+      ],
+      "async": false
+    },
+    "/home/felipe/Documentos/boardgames-shop/web/src/components/org.header.tsx#Header": {
+      "id": "(app-client)/./src/components/org.header.tsx",
+      "name": "Header",
+      "chunks": [
+        "app/layout:static/chunks/app/layout.js"
       ],
       "async": false
     }
