@@ -44,7 +44,7 @@ export class AuthController {
           data: {
             sub: id,
             role: Role.User,
-            first_name: user.name,
+            firstName: user.name,
           },
         },
         process.env.JWT_SECRET as string,

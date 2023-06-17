@@ -39,9 +39,8 @@ interface AuthOptions {
 const authOptions: AuthOptions = {
   providers: [
     GoogleProvider({
-      clientId:
-        '220791840297-clo8nr9m2p94dlu42mtaqmof84qimt93.apps.googleusercontent.com' as string,
-      clientSecret: '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' as string,
+      clientId: '' as string,
+      clientSecret: '' as string,
     }),
   ],
   pages: {

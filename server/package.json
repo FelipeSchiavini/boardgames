@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "tsx watch src/index.ts",
     "lint": "eslint src --ext .ts --fix",
-    "codegen": "DEBUG=1 graphql-codegen --config codegen-remote.yml"
+    "codegen": "DEBUG=1 graphql-codegen --config codegen-remote.yml",
+    "codegen2": "DEBUG=1 graphql-codegen -r dotenv/config --config codegen-remote.yml"
+
 
   },
   "author": "",
