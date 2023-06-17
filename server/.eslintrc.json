@@ -1,0 +1,13 @@
+{
+  "extends":[
+    "@rocketseat/eslint-config/node"
+  ],
+  "overrides": [
+    {
+      "files": ["./remote-grapqhl-type.ts"],
+      "rules": {
+        "no-use-before-define": "off"
+      }
+    }
+  ]
+}

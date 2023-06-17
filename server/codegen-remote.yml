@@ -1,0 +1,22 @@
+overwrite: true
+schema: './schema.graphql'
+documents:
+  - ".src/**/*.{mutation,query}.{ts,tsx}"
+  - "./src/app/data/graphql/**/*.{ts,tsx}"
+generates:
+  remote-graphql-types.ts:
+    plugins:
+      - 'typescript'
+      - 'typescript-operations'
+    config:
+      scalars:
+        bigint: number
+        _text: string[]
+        jsonb: unknown
+        numeric: number
+        smallint: number
+        uuid: string
+        date: "`\u0024{number}-\u0024{number}-\u0024{number}`"
+        time: "`\u0024{number}:\u0024{number}:\u0024{number}`"
+        timestamptz: "`\u0024{number}-\u0024{number}-\u0024{number}T\u0024{number}:\u0024{number}:\u0024{number}+\u0024{number}:\u0024{number}`"
+        timetz: "`\u0024{number}:\u0024{number}:\u0024{number}+\u0024{number}`"
