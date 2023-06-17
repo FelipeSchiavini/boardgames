@@ -1,0 +1,8 @@
+- name: boardgames
+  kind: postgres
+  configuration:
+    connection_info:
+      use_prepared_statements: false
+      database_url: postgres://postgres:postgrespassword@db:5432/mydb
+      isolation_level: read-committed
+  tables: "!include boardgames/tables/tables.yaml"
