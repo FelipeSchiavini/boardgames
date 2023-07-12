@@ -1,1 +1,4 @@
+- "!include public_category_enum.yaml"
+- "!include public_customization_enum.yaml"
+- "!include public_products.yaml"
 - "!include public_users.yaml"
