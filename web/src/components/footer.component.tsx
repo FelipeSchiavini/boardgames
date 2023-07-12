@@ -37,7 +37,7 @@ export default function Footer() {
                     <li key={link}>
                       <Typography
                         as="a"
-                        href="#"
+                        href="www.google.com.br"
                         color="gray"
                         className="py-1.5 font-normal text-gray-200 transition-colors hover:text-gray-300"
                       >
@@ -60,7 +60,7 @@ export default function Footer() {
             <div className="flex gap-4 text-blue-gray-900 sm:justify-center">
               <Typography
                 as="a"
-                href="#"
+                href="www.google.com.br"
                 className="opacity-80 transition-opacity hover:opacity-100"
               >
                 <svg
@@ -78,7 +78,7 @@ export default function Footer() {
               </Typography>
               <Typography
                 as="a"
-                href="#"
+                href="www.google.com.br"
                 className="opacity-80 transition-opacity hover:opacity-100"
               >
                 <svg
@@ -96,7 +96,7 @@ export default function Footer() {
               </Typography>
               <Typography
                 as="a"
-                href="#"
+                href="www.google.com.br"
                 className="opacity-80 transition-opacity hover:opacity-100"
               >
                 <svg
@@ -110,7 +110,7 @@ export default function Footer() {
               </Typography>
               <Typography
                 as="a"
-                href="#"
+                href="www.google.com"
                 className="opacity-80 transition-opacity hover:opacity-100"
               >
                 <svg
@@ -128,7 +128,7 @@ export default function Footer() {
               </Typography>
               <Typography
                 as="a"
-                href="#"
+                href="www.google.com.br"
                 className="opacity-80 transition-opacity hover:opacity-100"
               >
                 <svg

@@ -28,9 +28,11 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       >
         <main className="min-h-screen ">
           <NextAuthProvider>
-            <Header />
-            {children}
-            <Footer />
+            <>
+              <Header />
+              {children}
+              <Footer />
+            </>
           </NextAuthProvider>
         </main>
       </body>
