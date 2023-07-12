@@ -1,10 +1,9 @@
-import { useExpressServer } from 'routing-controllers'
+import path from 'path'
 import express from 'express'
-// import path from 'path'
+import { useExpressServer } from 'routing-controllers'
 import { authorizationChecker } from './app/middleware/authorization-checker'
-import { AuthController } from './app/controllers/auth.controllers'
-const dotenv = require('dotenv')
-dotenv.config()
+import { currentUserChecker } from './app/middleware/current-user-checker'
+import { Config } from './config'
 
 const bootstrap = () => {
   const app = express()
@@ -13,12 +12,14 @@ const bootstrap = () => {
   useExpressServer(app, {
     cors: true,
     defaultErrorHandler: true,
-    // controllers: [path.join(__dirname, 'app/controllers/**/*.ts')],
-    controllers: [AuthController],
+    controllers: [path.join(__dirname, 'app/controllers/**/*.ts')],
     authorizationChecker,
+    currentUserChecker,
   })
 
-  app.listen(3333, () => console.log('Listening on port 3333'))
+  app.listen(Config.apiPort, () =>
+    console.log(`Listening on port ${Config.apiPort}`),
+  )
 }
 
 bootstrap()

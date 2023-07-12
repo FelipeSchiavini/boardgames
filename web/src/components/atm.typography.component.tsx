@@ -2,6 +2,7 @@ import * as React from 'react'
 
 interface TypographyProps {
   children: React.ReactNode
+  color?: 'primary' | 'secondary'
 }
 
 export const H1: React.FC<TypographyProps> = ({ children }) => {
@@ -12,8 +13,10 @@ export const H2: React.FC<TypographyProps> = ({ children }) => {
   return <h2>{children}</h2>
 }
 
-export const H3: React.FC<TypographyProps> = ({ children }) => {
-  return <h3 className="font-sans text-base font-bold">{children}</h3>
+export const H3: React.FC<TypographyProps> = ({ children, color }) => {
+  const textColor = `${color === 'secondary' ? 'text-purple-300' : ''}`
+  const className = `font-sans text-base font-bold ${textColor}`
+  return <h3 className={className}>{children}</h3>
 }
 
 export const Body: React.FC<TypographyProps> = ({ children }) => {

@@ -1,12 +1,12 @@
 import gql from 'graphql-tag'
 
 export const CreateUserMutation = gql`
-  mutation MyMutation($user: user_insert_input = {}) {
-    insert_user_one(object: $user) {
+  mutation MyMutation($user: users_insert_input!) {
+    insert_users_one(object: $user) {
       email
       first_name
       id
-      profile_picture
+      picture
       last_name
     }
   }
