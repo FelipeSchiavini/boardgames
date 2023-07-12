@@ -14,6 +14,21 @@ directive @cached(
 ) on QUERY
 
 """
+Boolean expression to compare columns of type "Int". All fields are combined with logical 'AND'.
+"""
+input Int_comparison_exp {
+  _eq: Int
+  _gt: Int
+  _gte: Int
+  _in: [Int!]
+  _is_null: Boolean
+  _lt: Int
+  _lte: Int
+  _neq: Int
+  _nin: [Int!]
+}
+
+"""
 Boolean expression to compare columns of type "String". All fields are combined with logical 'AND'.
 """
 input String_comparison_exp {
@@ -69,6 +84,19 @@ input String_comparison_exp {
 """mutation root"""
 type mutation_root {
   """
+  delete data from the table: "products"
+  """
+  delete_products(
+    """filter the rows which have to be deleted"""
+    where: products_bool_exp!
+  ): products_mutation_response
+
+  """
+  delete single row from the table: "products"
+  """
+  delete_products_by_pk(id: Int!): products
+
+  """
   delete data from the table: "users"
   """
   delete_users(
@@ -80,6 +108,28 @@ type mutation_root {
   delete single row from the table: "users"
   """
   delete_users_by_pk(id: uuid!): users
+
+  """
+  insert data into the table: "products"
+  """
+  insert_products(
+    """the rows to be inserted"""
+    objects: [products_insert_input!]!
+
+    """on conflict condition"""
+    on_conflict: products_on_conflict
+  ): products_mutation_response
+
+  """
+  insert a single row into the table: "products"
+  """
+  insert_products_one(
+    """the row to be inserted"""
+    object: products_insert_input!
+
+    """on conflict condition"""
+    on_conflict: products_on_conflict
+  ): products
 
   """
   insert data into the table: "users"
@@ -102,6 +152,32 @@ type mutation_root {
     """on conflict condition"""
     on_conflict: users_on_conflict
   ): users
+
+  """
+  update data of the table: "products"
+  """
+  update_products(
+    """increments the numeric columns with given value of the filtered values"""
+    _inc: products_inc_input
+
+    """sets the columns of the filtered rows to the given values"""
+    _set: products_set_input
+
+    """filter the rows which have to be updated"""
+    where: products_bool_exp!
+  ): products_mutation_response
+
+  """
+  update single row of the table: "products"
+  """
+  update_products_by_pk(
+    """increments the numeric columns with given value of the filtered values"""
+    _inc: products_inc_input
+
+    """sets the columns of the filtered rows to the given values"""
+    _set: products_set_input
+    pk_columns: products_pk_columns_input!
+  ): products
 
   """
   update data of the table: "users"
@@ -145,7 +221,269 @@ enum order_by {
   desc_nulls_last
 }
 
+"""
+columns and relationships of "products"
+"""
+type products {
+  description: String
+  id: Int!
+  name: String!
+  picture: String!
+  price: String!
+}
+
+"""
+aggregated selection of "products"
+"""
+type products_aggregate {
+  aggregate: products_aggregate_fields
+  nodes: [products!]!
+}
+
+"""
+aggregate fields of "products"
+"""
+type products_aggregate_fields {
+  avg: products_avg_fields
+  count(columns: [products_select_column!], distinct: Boolean): Int!
+  max: products_max_fields
+  min: products_min_fields
+  stddev: products_stddev_fields
+  stddev_pop: products_stddev_pop_fields
+  stddev_samp: products_stddev_samp_fields
+  sum: products_sum_fields
+  var_pop: products_var_pop_fields
+  var_samp: products_var_samp_fields
+  variance: products_variance_fields
+}
+
+"""aggregate avg on columns"""
+type products_avg_fields {
+  id: Float
+}
+
+"""
+Boolean expression to filter rows from the table "products". All fields are combined with a logical 'AND'.
+"""
+input products_bool_exp {
+  _and: [products_bool_exp!]
+  _not: products_bool_exp
+  _or: [products_bool_exp!]
+  description: String_comparison_exp
+  id: Int_comparison_exp
+  name: String_comparison_exp
+  picture: String_comparison_exp
+  price: String_comparison_exp
+}
+
+"""
+unique or primary key constraints on table "products"
+"""
+enum products_constraint {
+  """unique or primary key constraint"""
+  products_pkey
+}
+
+"""
+input type for incrementing numeric columns in table "products"
+"""
+input products_inc_input {
+  id: Int
+}
+
+"""
+input type for inserting data into table "products"
+"""
+input products_insert_input {
+  description: String
+  id: Int
+  name: String
+  picture: String
+  price: String
+}
+
+"""aggregate max on columns"""
+type products_max_fields {
+  description: String
+  id: Int
+  name: String
+  picture: String
+  price: String
+}
+
+"""aggregate min on columns"""
+type products_min_fields {
+  description: String
+  id: Int
+  name: String
+  picture: String
+  price: String
+}
+
+"""
+response of any mutation on the table "products"
+"""
+type products_mutation_response {
+  """number of rows affected by the mutation"""
+  affected_rows: Int!
+
+  """data from the rows affected by the mutation"""
+  returning: [products!]!
+}
+
+"""
+on conflict condition type for table "products"
+"""
+input products_on_conflict {
+  constraint: products_constraint!
+  update_columns: [products_update_column!]! = []
+  where: products_bool_exp
+}
+
+"""Ordering options when selecting data from "products"."""
+input products_order_by {
+  description: order_by
+  id: order_by
+  name: order_by
+  picture: order_by
+  price: order_by
+}
+
+"""primary key columns input for table: products"""
+input products_pk_columns_input {
+  id: Int!
+}
+
+"""
+select columns of table "products"
+"""
+enum products_select_column {
+  """column name"""
+  description
+
+  """column name"""
+  id
+
+  """column name"""
+  name
+
+  """column name"""
+  picture
+
+  """column name"""
+  price
+}
+
+"""
+input type for updating data in table "products"
+"""
+input products_set_input {
+  description: String
+  id: Int
+  name: String
+  picture: String
+  price: String
+}
+
+"""aggregate stddev on columns"""
+type products_stddev_fields {
+  id: Float
+}
+
+"""aggregate stddev_pop on columns"""
+type products_stddev_pop_fields {
+  id: Float
+}
+
+"""aggregate stddev_samp on columns"""
+type products_stddev_samp_fields {
+  id: Float
+}
+
+"""aggregate sum on columns"""
+type products_sum_fields {
+  id: Int
+}
+
+"""
+update columns of table "products"
+"""
+enum products_update_column {
+  """column name"""
+  description
+
+  """column name"""
+  id
+
+  """column name"""
+  name
+
+  """column name"""
+  picture
+
+  """column name"""
+  price
+}
+
+"""aggregate var_pop on columns"""
+type products_var_pop_fields {
+  id: Float
+}
+
+"""aggregate var_samp on columns"""
+type products_var_samp_fields {
+  id: Float
+}
+
+"""aggregate variance on columns"""
+type products_variance_fields {
+  id: Float
+}
+
 type query_root {
+  """
+  fetch data from the table: "products"
+  """
+  products(
+    """distinct select on columns"""
+    distinct_on: [products_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [products_order_by!]
+
+    """filter the rows returned"""
+    where: products_bool_exp
+  ): [products!]!
+
+  """
+  fetch aggregated fields from the table: "products"
+  """
+  products_aggregate(
+    """distinct select on columns"""
+    distinct_on: [products_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [products_order_by!]
+
+    """filter the rows returned"""
+    where: products_bool_exp
+  ): products_aggregate!
+
+  """fetch data from the table: "products" using primary key columns"""
+  products_by_pk(id: Int!): products
+
   """
   fetch data from the table: "users"
   """
@@ -191,6 +529,49 @@ type query_root {
 }
 
 type subscription_root {
+  """
+  fetch data from the table: "products"
+  """
+  products(
+    """distinct select on columns"""
+    distinct_on: [products_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [products_order_by!]
+
+    """filter the rows returned"""
+    where: products_bool_exp
+  ): [products!]!
+
+  """
+  fetch aggregated fields from the table: "products"
+  """
+  products_aggregate(
+    """distinct select on columns"""
+    distinct_on: [products_select_column!]
+
+    """limit the number of rows returned"""
+    limit: Int
+
+    """skip the first n rows. Use only with order_by"""
+    offset: Int
+
+    """sort the rows by one or more columns"""
+    order_by: [products_order_by!]
+
+    """filter the rows returned"""
+    where: products_bool_exp
+  ): products_aggregate!
+
+  """fetch data from the table: "products" using primary key columns"""
+  products_by_pk(id: Int!): products
+
   """
   fetch data from the table: "users"
   """
