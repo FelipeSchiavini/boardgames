@@ -6,7 +6,6 @@ import { sign } from 'jsonwebtoken'
 import { Role } from '../../utils/types/role.types'
 import { CreateUserMutation } from '../data/graphql/user.mutation'
 
-// @JsonController('auth')
 @JsonController('/auth')
 export class AuthController {
   @Get('/google')

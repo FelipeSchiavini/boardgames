@@ -7,10 +7,13 @@ import { Separator } from './utils.component'
 import * as React from 'react'
 
 interface ProductCardProps {
+  id: string
   name: string
   description: string
   priceInCash: string
   productUrl: string
+  onDetailsClick: () => void
+  onAddToCartClick: () => void
 }
 
 export const ProductCard: React.FC<ProductCardProps> = ({
@@ -18,6 +21,8 @@ export const ProductCard: React.FC<ProductCardProps> = ({
   description,
   priceInCash,
   productUrl,
+  onDetailsClick,
+  onAddToCartClick,
 }) => {
   return (
     <div className="mt-5 flex h-[580px] w-80 cursor-pointer flex-col justify-between rounded-lg bg-gray-600 p-4">
@@ -33,10 +38,13 @@ export const ProductCard: React.FC<ProductCardProps> = ({
       <div className="m-0 flex justify-center ">
         <H3 color="secondary">R$ {priceInCash}</H3>
       </div>
-      <Button icon={ShoppingCart} type="primary">
+      <Button icon={ShoppingCart} type="primary" onClick={onAddToCartClick}>
         + Adicionar ao carrinho
       </Button>
-      <Button type="secondary"> Detalhes </Button>
+      <Button type="secondary" onClick={onDetailsClick}>
+        {' '}
+        Detalhes{' '}
+      </Button>
     </div>
   )
 }

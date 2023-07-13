@@ -11,7 +11,7 @@ export default function CustomCarousel() {
         autoplay={true}
         loop={true}
         navigation={({ setActiveIndex, activeIndex, length }) => (
-          <div className="absolute bottom-6 left-2/4 z-50 flex -translate-x-2/4 gap-3">
+          <div className="z-3 absolute bottom-6 left-2/4 flex -translate-x-2/4 gap-3">
             {new Array(length).fill('').map((_, i) => (
               <span
                 key={i}
